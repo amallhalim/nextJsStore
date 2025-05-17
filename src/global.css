@@ -1,0 +1,18 @@
+body {
+  padding: 20px 20px 60px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+div {
+  margin-bottom: 20px;
+  background-color: "green";
+}
+image {
+  margin-bottom: 20px;
+  background-color: "green";
+}
+a {
+  margin-bottom: 20px;
+  background-color: "red";
+}
