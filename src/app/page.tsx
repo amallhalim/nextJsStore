@@ -68,6 +68,15 @@ export default function Home() {
           >
 layout
           </a>
+             <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
+              <h1 className="text-5xl font-bold ">Hello, Next.js!</h1>
+              <h1 className="text-7xl font-bold ">Hello, Next.js!</h1>
+              <h1 className="text-1xl font-bold ">Hello, Next.js!</h1>
+              <h1 className="text-2xl font-bold ">Hello, Next.js!</h1>
+
+
+
+
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4 red"
