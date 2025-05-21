@@ -2,6 +2,7 @@
 
 import React from "react";
 import useFetchAllPost from "../../../hooks/useFetchAllPost";
+import Link from "next/link";
 
 export default function ClientComponent() {
   const { allPost, loading, error } = useFetchAllPost();
@@ -46,6 +47,7 @@ export default function ClientComponent() {
               onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
               onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
             >
+              <Link href={`/product/${post.id}`}> go to details </Link>
               <h3
                 style={{
                   backgroundColor: "#388e3c",

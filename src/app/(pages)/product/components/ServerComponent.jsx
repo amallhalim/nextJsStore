@@ -9,7 +9,7 @@ export default  function ServerComponent() {
     <div>
       {posts?.length > 0 ? (
         posts.map(post => (
-          <PostCardClient key={post.id} title={post.title} body={post.body} />
+          <PostCardClient key={post.id} id={post.id}  title={post.title} body={post.body} />
         ))
       ) : (
         <p>No posts available</p>
