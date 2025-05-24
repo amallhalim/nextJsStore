@@ -13,6 +13,5 @@ export default async function fetchSinglePost({id}) {
 .then(response => response.json())
 .then(json => {postData = json}
 )
-console.log("🚀 ~ fetchSinglePost ~ postData:", postData)
     return postData
 }

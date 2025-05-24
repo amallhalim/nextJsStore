@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "../styles.module.css"
-console.log("🚀 ~ styles:", styles)
 import   './globals.css'
 export default function Home() {
   return (

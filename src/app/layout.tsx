@@ -30,7 +30,7 @@ export default function RootLayout({
         style={{ backgroundColor: "#f2f2", color: "#000" }}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div>hello from layout</div>
+        <div className="bg-slate-900 text-red-200">hello from layout</div>
         <button style={{ backgroundColor: "#f2f2", color: "#000" }}>
           <Link href="/product">go to product</Link>
         </button>

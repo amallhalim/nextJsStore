@@ -4,7 +4,6 @@ export default  function useFetchAllPost() {
    const [loading, setLoading] = React.useState(true)
    const [error, setError] = React.useState(null)
    const [allPost, setAllPost] = React.useState([])
-   console.log("🚀 ~ useFetchAllPost 99999999999~ allPost:", allPost)
 
    const fetchData = async () => {
       setLoading(true)
@@ -13,7 +12,6 @@ export default  function useFetchAllPost() {
          await fetch('https://jsonplaceholder.typicode.com/posts')
             .then(response => response.json())
             .then(json => {
-               console.log("🚀 ~ fetchData ~ json:", json)
                return setAllPost(json)
             })
          setLoading(false)
