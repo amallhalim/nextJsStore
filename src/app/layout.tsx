@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { inter } from "./ui/fonts";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,26 +26,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isActive = true;  
+  const isActive = true;
 
   return (
     <html lang="ar">
       <body
         style={{ backgroundColor: "#f2f2", color: "#000" }}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className} antialiased`}
       >
-          <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
-      Hello from layout
-    </div>
-          <div className={false ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
-      Hello from layout
-    </div>
+
+        <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
+          Hello from layout
+        </div>
+       
+
+        <Image
+          src="/assets/img/test.jpg"
+          alt="Test Image"
+          width={600}
+          height={300}
+          className="hidden md:block"
+
+        />
+
+        <Image
+          src="/vercel.svg"
+          alt="Vercel Logo"
+          width={600}
+          height={300}
+                  className="block md:hidden"
+
+        />
+
+        <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
+          Hello from layout
+        </div>
+        <div>home
+
+
+        </div>
+
         <div className="bg-slate-900 text-red-200">hello from layout</div>
         <button style={{ backgroundColor: "#f2f2", color: "#000" }}>
           <Link href="/product">go to product</Link>
         </button>
 
-      
+
         {children}
       </body>
     </html>
