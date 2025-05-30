@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import { inter } from "./ui/fonts";
 
 const geistSans = Geist({
@@ -36,10 +35,11 @@ export default function RootLayout({
         <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
           Hello from layout
         </div>
-        <button style={{ backgroundColor: "#f2f2", color: "#000" }}>
-          <Link href="/product">go to product</Link>
-        </button>
+  
         {children}
+         <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
+          Hello from layout
+        </div>
       </body>
     </html>
   );
