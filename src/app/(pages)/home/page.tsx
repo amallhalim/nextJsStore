@@ -1,5 +1,4 @@
 import Image from "next/image";
- import image2 from "../../../assets/img/test.jpg"
 import Link from "next/link";
 
 export default function page() {
@@ -15,20 +14,7 @@ export default function page() {
             </button>
           </Link>
         </nav>
-      <Image 
-      src={image2}
-       alt="Vercel Logo" 
-       width={2000} height={1000}/>
-
-        {/* <AvatarUploadPage/> */}
-
-        <Image
-          src="/assets/img/test.jpg"
-          alt="Test Image"
-          width={600}
-          height={300}
-          className="hidden md:block"
-        />
+    
         <Image
           src="/vercel.svg"
           alt="Vercel Logo"
