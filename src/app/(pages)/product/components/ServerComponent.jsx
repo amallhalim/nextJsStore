@@ -1,6 +1,6 @@
 import PostCardClient from '../components/PostCardClient'
 import { use } from 'react'
-import fetchAllPost from "../../../utils/fetchAllPost"
+import fetchAllPost from "../../../_utils/fetchAllPost"
 export default  function ServerComponent() {
     const posts = use(fetchAllPost()) 
 //  if (false) {

@@ -21,11 +21,39 @@ export default function Home() {
         <button
           type="button"
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
-          onClick={() => router.push("/dashboardi")}
+          onClick={() => router.push("/dashboard")}
         >
           Go to Dashboard
         </button>
 
+        <button
+          type="button"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onClick={() => router.push("/post")}
+        >
+          Go to post
+        </button>
+          <button
+          type="button"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onClick={() => router.push("/product")}
+        >
+          Go to product
+        </button>
+           <button
+          type="button"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onClick={() => router.push("/documentation")}
+        >
+          Go to documentation
+        </button>
+               <button
+          type="button"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onClick={() => router.push("/home")}
+        >
+          Go to home
+        </button>
         <div className={styles.red}>
           test ttttttt ❤️❤️❤️
         </div>

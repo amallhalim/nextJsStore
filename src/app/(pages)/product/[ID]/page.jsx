@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import fetchSinglePost from '../../../utils/fetchSinglePost'
+import fetchSinglePost from '../../../_utils/fetchSinglePost'
 import PostDetails  from '../[ID]/PostDetails'
 
 export const metadata = {
