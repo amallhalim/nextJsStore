@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function postDetails() {
 
-  if(true) return notFound()
+  // if(true) return notFound()
   return (
     <div>post --------  postDetails 0000000000000000</div>
   )
