@@ -9,6 +9,7 @@ export const metadata = {
 export default  async function page(props) {
 
 const { params } = props
+
 const data = await fetchSinglePost({id:params?.ID})
 
   return (

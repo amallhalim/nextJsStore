@@ -3,9 +3,12 @@
 import React from "react";
 import useFetchAllPost from "../../../hooks/useFetchAllPost";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 export default function ClientComponent() {
   const { allPost, loading, error } = useFetchAllPost();
+  const searchParams = useSearchParams()
+  console.log("🚀 ~ ClientComponent ~ searchParams:", searchParams)
 
   return (
     <div

@@ -3,7 +3,9 @@ import { use } from 'react'
 import fetchAllPost from "../../../utils/fetchAllPost"
 export default  function ServerComponent() {
     const posts = use(fetchAllPost()) 
-
+//  if (false) {
+//     redirect('/login')
+//   }
 
   return (
     <div>
