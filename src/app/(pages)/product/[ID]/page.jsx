@@ -2,9 +2,17 @@ import React, { Suspense } from 'react'
 import fetchSinglePost from '../../../_utils/fetchSinglePost'
 import PostDetails  from '../[ID]/PostDetails'
 
-export const metadata = {
-  title: 'Product',
-  description: 'Product page',
+
+export async function generateMetadata({params}) {
+
+  const postData = await fetchSinglePost({id:params?.ID})
+return {
+  title: postData.title,
+  description: postData.body,
+  icons: {
+    icon: postData.icon
+  }
+}
 }
 export default  async function page(props) {
 
