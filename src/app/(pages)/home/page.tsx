@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-export const metadata = {
-  title: 'home',
-  description: 'home page',
-}
+
 export default function page() {
   return (
     <div>home

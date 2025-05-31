@@ -2,6 +2,12 @@ import Link from 'next/link'
 import ServerComponent from './components/ServerComponent'
 import ClientComponent from "../product/components/ClientComponent"
 
+export const metadata = {
+  title: {
+    default: "PRODUCT PAGE",
+  },
+  description: 'home page',
+}
 export default function page() {
   return (
     <div>
