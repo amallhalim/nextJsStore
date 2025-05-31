@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
 import styles from "../styles.module.css";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
-
+const redirectUser=() => { 
+  redirect("/dashboard")
+}
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-geist">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -24,6 +27,13 @@ export default function Home() {
           onClick={() => router.push("/dashboard")}
         >
           Go to Dashboard
+        </button>
+          <button
+          type="button"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+          onClick={redirectUser}
+        >
+         ------ redirectUser ----
         </button>
 
         <button
@@ -47,6 +57,9 @@ export default function Home() {
         >
           Go to documentation
         </button>
+         <Link href="/documentation" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">  Link </Link>
+         
+
                <button
           type="button"
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
