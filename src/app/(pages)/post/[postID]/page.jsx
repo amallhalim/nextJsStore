@@ -1,23 +1,32 @@
-import { notFound } from 'next/navigation'
-import { title } from 'process'
-const postData ={
-  title : '222222222title test',
-  body : '333333333body' ,
-  author: 1,
-  auother : '5555555555author'
-}
+import { notFound } from 'next/navigation';
+
+const postData = {
+  title: '222222222title test',
+  body: '333333333body',
+  author: '5555555555author',
+  // icon: '/favicon.ico' // optional if you want to include icon
+};
+
 export const metadata = {
   title: postData.title,
   description: postData.body,
-  icons: {
-    icon: postData.icon
-  }
-}
+  // icons: {
+  //   icon: postData.icon, // Optional, only if defined
+  // },
+};
 
-export default function postDetails() {
+export default function PostDetails() {
+  // Simulate error
+  throw new Error('Something went wrong while loading the post');
 
-  // if(true) return notFound()
+  // Alternatively simulate 404
+  // notFound();
+
   return (
-    <div>post --------  postDetails 0000000000000000</div>
-  )
+    <div>
+      <h1>{postData.title}</h1>
+      <p>{postData.body}</p>
+      <p>Author: {postData.author}</p>
+    </div>
+  );
 }
