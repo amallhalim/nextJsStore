@@ -14,9 +14,9 @@ export default function Error({ error, reset }) {
 
       <button
         onClick={() => reset()}
-        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+        className="px-4 py-2 bg-red-100 text-white rounded hover:bg-red-600 transition"
       >
-        Try Again
+        Try Again pppp
       </button>
     </div>
   );

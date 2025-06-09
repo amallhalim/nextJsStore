@@ -10,7 +10,7 @@ function reloadPage() {
   console.log("reload")
   router.refresh()
 reset()
-navigate
+
 }
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center p-4">
@@ -23,7 +23,8 @@ navigate
         onClick={reloadPage}
         className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
       >
-        Try Again2post
+        Try Again222 product
+        {/* <Lin href="/documentation"> documentation </Lin> */}
       </button>
     </div>
   );

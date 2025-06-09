@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import PostCard from '../[postID]/(components)/PostCard';
 
 const postData = {
   title: '222222222title test',
@@ -17,16 +18,11 @@ export const metadata = {
 
 export default function PostDetails() {
   // Simulate error
-  throw new Error('Something went wrong while loading the post');
 
   // Alternatively simulate 404
   // notFound();
 
   return (
-    <div>
-      <h1>{postData.title}</h1>
-      <p>{postData.body}</p>
-      <p>Author: {postData.author}</p>
-    </div>
+ <PostCard/>
   );
 }

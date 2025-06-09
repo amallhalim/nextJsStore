@@ -5,7 +5,8 @@ export const metadata = {
   description: 'Product page',
 }
 export default  async function PostDetails({data}) {
-
+console.log("🚀 ~ PostDetails ~ data:", data)
+if (!data?.id) throw new Error('Post not found')
   return (
       <div className="border-t pt-4">
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{data?.title}</h2>
