@@ -1,16 +1,16 @@
 'use client';
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 export default function Error({ error, reset }) {
   console.error(error); // helpful during development
 const router = useRouter();
 function reloadPage() {
-  console.log("reload")
+  console.log("reloadPage")
   router.refresh()
 reset()
-navigate
+
 }
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center p-4">
