@@ -22,4 +22,7 @@ export default function Error({ error, reset }) {
     </div>
         </body>
   );
+
+
+
 }
