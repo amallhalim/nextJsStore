@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function PostCard({ postData }) {
   if (!postData) {
-      throw new Error('Something went wrong while loading the post');
+    //   throw new Error('Something went wrong while loading the post');
     return <div>Loading...</div>; // Or some fallback UI
   }
 
