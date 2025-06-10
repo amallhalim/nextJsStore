@@ -1,34 +1,27 @@
-import React from 'react';
-// in slots in next js  make asure to use the same name as the layout file  not page file
-export default function NotificationDashboardLayout({ children, notification, user, post }) {
+import React from 'react'
+
+export default function layout({ children, notification, user, post ,login }) {
+  console.log("🚀 ~ layout ~ login:", login)
+  const isLogin = false
   return (
-    <div className="min-h-screen bg-red-50 text-amber-900 p-6 space-y-6">
-      
-      {/* Notification */}
-      <section className="bg-white rounded-xl shadow-md p-4 border-l-4 border-amber-500">
-        <h2 className="text-lg font-semibold mb-2">Notification</h2>
-        <div>{notification || 'No notification available'}</div>
-      </section>
-
-      {/* User Info */}
-      <section className="bg-white rounded-xl shadow-md p-4 border-l-4 border-amber-500">
-        <h2 className="text-lg font-semibold mb-2">User</h2>
-        <div>{user || 'No user data available'}</div>
-      </section>
-
-      {/* Post Info */}
-      <section className="bg-white rounded-xl shadow-md p-4 border-l-4 border-amber-500">
-        <h2 className="text-lg font-semibold mb-2">Post</h2>
-        <div>{post || 'No post content available'}</div>
-      </section>
-
-      {/* Main Content (Children) */}
-      <section className="bg-white rounded-xl shadow-md p-4 border-l-4 border-amber-500">
-        <h2 className="text-lg font-semibold mb-2">Dashboard Content</h2>
-        <div>{children || 'No additional content'}</div>
-      </section>
-
+    <div>
+     <div className=" bg-green-100 text-amber-950 p-4">
+      <h1 className="text-2xl font-bold mb-4">Complex Dashboard Layout</h1>
+      <p className="mb-4">Notification: {notification}</p>
+      <p className="mb-4">User: {user}</p>
+      <p className="mb-4">Post: {post}</p>
+      {isLogin ? (
+        <div className="bg-blue-100 p-4 rounded">
+          <h2 className="text-xl font-semibold">Welcome back!</h2>
+        </div>
+      ) : (
+        <div className="bg-red-300 p-4 rounded">
+            <h2 className="text-xl font-semibold">Welcome to login again!</h2>
+            <div> {login}</div>
+        </div>
+      )}    
     </div>
-  );
+    </div>
+  )
 }
 
