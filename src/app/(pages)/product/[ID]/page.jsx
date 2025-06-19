@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import fetchSinglePost from '../../../_utils/fetchSinglePost'
+import fetchSinglePost from '../../../utils/fetchSinglePost'
 import PostDetails  from '../[ID]/PostDetails'
 
 
