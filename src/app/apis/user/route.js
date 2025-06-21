@@ -1,6 +1,14 @@
 
-export async function GET() {
-  return new Response("hello from user route");
+ import user from "./../../staticData/data.json"
+export async function GET(request) {
+  const searchParams = request.nextUrl.searchParams;
+   const filteredUsers = user.filter((user) => {
+    const value = searchParams.get("value");
+    return value ? user.value > parseInt(value) : true;
+  });
+  return Response.json(filteredUsers, {
+    headers: { "Content-Type": "application/json" },
+  });
 }
 
 export async function POST(request) {
