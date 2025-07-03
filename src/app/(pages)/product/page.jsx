@@ -1,8 +1,6 @@
 import React from 'react'
-import SystemThemeCheck from "./components/SystemThemeCheck"
 import fetchAllProduct from './../../utils/fetchAllProduct'
 import ProductCard from "./components/ProductCard"
-import ClientWrapper from "./components/ClientWrapper"
 export default async function page() {
 
 
@@ -16,11 +14,7 @@ export default async function page() {
                 >
                     {product.map(product => (
                         <div key={product.id} className="mb-4">
-                            {/* <SystemThemeCheck /> */}
-                            <ClientWrapper>
-
-                                <ProductCard product={product} key={product.id} />
-                            </ClientWrapper>
+                            <ProductCard product={product} key={product.id} />
                         </div>
                     ))}
                 </div>
