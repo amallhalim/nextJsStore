@@ -7,15 +7,15 @@ export default function Page() {
   const searchParams = useSearchParams();
   console.log("🚀 ~ Page ~ searchParams:", searchParams)
   console.log("🚀 ~ updateSorting ~ searchParams.toString():", searchParams.toString())
-    const search = searchParams.get('search')
-    console.log("🚀 ~ Page ~ search:", search)
-    const has = searchParams.has('search')
-    console.log("🚀 ~ Page ~ has:", has)
-    const getall = searchParams.getAll('search')
-    console.log("🚀 ~ Page ~ getall:", getall)
-    const values = searchParams.values('search')    
-    console.log("🚀 ~ Page ~ values:", values)
-    
+  const search = searchParams.get('search')
+  console.log("🚀 ~ Page ~ search:", search)
+  const has = searchParams.has('search')
+  console.log("🚀 ~ Page ~ has:", has)
+  const getall = searchParams.getAll('search')
+  console.log("🚀 ~ Page ~ getall:", getall)
+  const values = searchParams.values('search')
+  console.log("🚀 ~ Page ~ values:", values)
+
 
   const pathname = usePathname();
 
@@ -41,7 +41,7 @@ export default function Page() {
       <h1 className="text-2xl font-bold mb-4">Welcome to the Hello Page</h1>
 
       <Link
-        href="/product"
+        href="/post2"
         className={
           isProductActive
             ? "bg-red-200 ext-white px-4 py-2 rounded hover:bg-blue-700"

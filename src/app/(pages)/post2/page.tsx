@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import ServerComponent from './components/ServerComponent'
-import ClientComponent from "../product/components/ClientComponent"
+import ClientComponent from "../post2/components/ClientComponent"
 
 export const metadata = {
   title: {

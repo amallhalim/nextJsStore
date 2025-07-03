@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function PostCardClient({ title, body,id }) {
+export default function PostCardClient({ title, body, id }) {
   return (
     <div
       onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
@@ -18,7 +18,7 @@ export default function PostCardClient({ title, body,id }) {
       }}
     >
       <button>
-      <Link href={`/product/${id}`}>go to detail</Link>
+        <Link href={`/post2/${id}`}>go to detail</Link>
       </button>
       <h2>{title}</h2>
       <p>{body}</p>

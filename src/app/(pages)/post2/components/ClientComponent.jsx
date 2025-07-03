@@ -50,7 +50,7 @@ export default function ClientComponent() {
               onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
               onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
             >
-              <Link href={`/product/${post.id}`}> go to details </Link>
+              <Link href={`/post2/${post.id}`}> go to details </Link>
               <h3
                 style={{
                   backgroundColor: "#388e3c",
