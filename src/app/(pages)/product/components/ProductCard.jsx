@@ -1,40 +1,34 @@
 'use client'
 import React from 'react'
 import SystemThemeCheck from './SystemThemeCheck'
+import { AirVent, AlarmClockPlus } from 'lucide-react'
 
 export default function ProductCard({ product }) {
     // const [isSystemDark, setIsSystemDark] = useState(false)
 
     return (
-        <div
-            style={{
-                border: '1px solid red',
-                padding: '10px',
-                width: '100%',
-            }}
+        <div className='w-[100%] h-[100%] p-2 bg-gray-100 border-2 border-gray-200 text-black'
         >
             <h1>{product.title}</h1>
-
-            <div className="bg-[var(--color-amal-500)] text-white p-2 rounded">
-                Hello, Amal!
+            <div className="bg-amber-400 p-2 rounded mt-2">
+                {product.category}
             </div>
+            <p className='bg-slate-700'>price: {product.price}</p>
+            <p>rating: {product.rating?.rate}</p>
 
-            <div className="bg-[var(--background)] text-[var(--foreground)] p-2 rounded mt-2">
-                {product.body}
-            </div>
-
-            <div className="bg-red-500 text-white p-2 rounded mt-2">
-                {product.body}
-            </div>
-
-            <p>Author: {product.author}</p>
             <img
                 src={product.image}
                 alt={product.title}
                 style={{ width: '200px', height: '200px' }}
             />
+            <AlarmClockPlus />
+            <AirVent />
 
-            <SystemThemeCheck />
+            <AirVent size={32} color="#545cc9" />
+            <div className='bg-red-600'>
+                add to card
+                {/* <SystemThemeCheck /> */}
+            </div>
         </div>
     )
 }
