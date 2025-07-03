@@ -1,23 +1,56 @@
 @import "tailwindcss";
 
+/* 🌞 Light Mode (default) */
 :root {
+  /* Base Theme */
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
+  /* Custom Named Colors */
+  --color-red-500: rgb(28, 142, 0);
+  /* this is green actually */
+  --color-amal-500: rgb(0, 47, 142);
+
+  /* App Theme Tokens */
+  --primary-500: #1c8e00;
+  --primary-400: #33a622;
+  --primary-300: #52c148;
+  --danger: #e50914;
+
+  /* Typography & System Tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
+/* No JavaScript. The browser handles it automatically. */
+/* It’s a CSS media query that checks if the user's device is set to dark mode. */
+/* Only apply these styles if the user’s OS or browser is in dark mode. */
+
+
+/* 🌚 Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --color-red-500: rgb(255, 50, 50);
+    /* override if needed */
+    --color-amal-500: rgb(0, 120, 255);
+
+    --primary-500: #7df48a;
+    --primary-400: #52dd6d;
+    --primary-300: #33c256;
+    --danger: #ff4b5c;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
   }
 }
+
+
+
 
 body {
   background: var(--background);
@@ -32,5 +65,5 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: turquoise;
-  
+
 }
