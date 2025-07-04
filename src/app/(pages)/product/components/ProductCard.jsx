@@ -2,6 +2,8 @@
 import React from 'react'
 import SystemThemeCheck from './SystemThemeCheck'
 import { AirVent, AlarmClockPlus } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 
 export default function ProductCard({ product }) {
     // const [isSystemDark, setIsSystemDark] = useState(false)
@@ -16,15 +18,21 @@ export default function ProductCard({ product }) {
             <p className='bg-slate-700'>price: {product.price}</p>
             <p>rating: {product.rating?.rate}</p>
 
-            <img
+            {/* <img
                 src={product.image}
                 alt={product.title}
                 style={{ width: '200px', height: '200px' }}
-            />
+            /> */}
+            <Avatar>
+                <AvatarImage src={product.image} />
+                <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <AirVent size={32} color="#545cc9" />
             <AlarmClockPlus />
             <AirVent />
 
-            <AirVent size={32} color="#545cc9" />
+            <Button>Click me</Button>
+
             <div className='bg-red-600'>
                 add to card
                 {/* <SystemThemeCheck /> */}
