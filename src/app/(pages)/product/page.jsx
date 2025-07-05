@@ -1,3 +1,4 @@
+// "use client"
 import React from 'react'
 import fetchAllProduct from './../../utils/fetchAllProduct'
 import ProductCard from "./components/ProductCard"
@@ -5,7 +6,7 @@ export default async function page() {
 
 
     const product = await fetchAllProduct()
-    console.log("🚀 ~ page ~ product:", product)
+    // console.log("🚀 ~ page ~ product:", product)
 
     return (
         <div>
