@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { inter } from "./components/ui/fonts";
-
+import Header from "./components/layout/Header";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,21 +40,18 @@ export default function RootLayout({
           min-h-screen
           bg-[#f2f2f2]
           text-black
+       
         `}
       >
-        <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
-          Hello from layout
+        <Header />
+        <div className=" min-h-screen  "
+        >
+
+          {children}
         </div>
-<div className=" 
- min-h-screen
-  bg-gray-500 "
-  >
-
-        {children}
-</div>
 
         <div className={isActive ? "bg-slate-900 text-red-200" : "bg-white text-black"}>
-          Hello from layout
+          footers
         </div>
       </body>
     </html>
