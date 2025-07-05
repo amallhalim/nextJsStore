@@ -1,6 +1,6 @@
 // "use client"
 import React from 'react'
-import fetchAllProduct from './../../utils/fetchAllProduct'
+import fetchAllProduct from '../../lib/apis/fetchAllProduct'
 import ProductCard from "./components/ProductCard"
 export default async function page() {
 

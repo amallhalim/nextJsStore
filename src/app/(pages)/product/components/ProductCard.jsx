@@ -3,8 +3,10 @@ import React from 'react'
 import { Star, StarHalf } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
+import { redirect, useRouter } from "next/navigation";
 
 export default function ProductCard({ product }) {
+    const router = useRouter()
     // const [isSystemDark, setIsSystemDark] = useState(false)
     const rate = [...Array(product.rating?.rate.toFixed())]
     const decimalPart = product.rating?.rate % 1  // 0.7
@@ -57,6 +59,11 @@ export default function ProductCard({ product }) {
             <Button className="w-full bg-gray-700 hover:bg-gray-600 text-white font-medium">
                 Add to Cart
             </Button>
-        </div>
+            <Button className="w-full bg-blue-300 hover:bg-blue-600 text-white font-medium mt-2" onClick={() =>
+                router.push(`/product/${product.id}`)}
+            >
+                go to details
+            </Button>
+        </div >
     )
 }
