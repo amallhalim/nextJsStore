@@ -1,69 +1,79 @@
-'use client'
-import React from 'react'
-import { Star, StarHalf } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
-import { redirect, useRouter } from "next/navigation";
+'use client';
+import React from 'react';
+import { Star, StarHalf } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
+import { useRouter } from 'next/navigation';
 
-export default function ProductCard({ product }) {
-    const router = useRouter()
-    // const [isSystemDark, setIsSystemDark] = useState(false)
-    const rate = [...Array(product.rating?.rate.toFixed())]
-    const decimalPart = product.rating?.rate % 1  // 0.7
-    const rateWithoutDecimal = Math.floor(product.rating?.rate)
-    const emptyStars = 5 - rate
-    const safeRate = typeof rate === "number" ? rate : 0;
+export default function ProductCard({ product, index }) {
+    console.log("🚀 ~ ProductCard ~ index:", index)
+    const router = useRouter();
+
+    const rate = product.rating?.rate || 0;
+    const rateWithoutDecimal = Math.floor(rate);
+    const decimalPart = rate % 1;
+    const emptyStars = 5 - Math.ceil(rate);
 
     return (
-        <div className="relative w-[100%] h-[100%] p-4 bg-white border border-gray-200 rounded-xl shadow hover:shadow-md transition">
+        <div className="relative w-full h-full p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
 
-            {!product.freeShipping && (
-                <div className="absolute top-2 left-2 bg-green-100 text-green-600  text-xs px-2 py-1 rounded-full shadow">
+            {/* Badge */}
+            {index % 2 == 0 && (
+                <div className="absolute top-3 left-3 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium shadow-sm">
                     Free Shipping
                 </div>
             )}
 
-            <div className="flex justify-center mb-4">
-                <Avatar className="w-40 h-40 overflow-hidden rounded-md border">
+            {/* Product Image */}
+            <div className="flex justify-center items-center mb-4">
+                <Avatar className="w-36 h-36 overflow-hidden rounded-lg border">
                     <AvatarImage src={product.image} className="object-contain w-full h-full" />
                     <AvatarFallback>IMG</AvatarFallback>
                 </Avatar>
             </div>
 
-            <h2 className="text-lg  mb-1 text-center text-gray-800">
-                {product.title?.length > 25 ? product.title.slice(0, 20) + '...' : product.title}
+            {/* Title */}
+            <h2 className="text-center text-base font-semibold text-gray-800 mb-1">
+                {product.title?.length > 40 ? product.title.slice(0, 37) + '...' : product.title}
             </h2>
 
-            <div className="bg-amber-200 text-amber-800 rounded-full px-3 py-1 text-sm text-center w-fit mx-auto mb-2">
+            {/* Category */}
+            <div className="text-xs text-center bg-amber-100 text-amber-800 px-3 py-0.5 rounded-full font-medium w-fit mx-auto mb-2">
                 {product.category}
             </div>
 
-            <p className="text-center text-xl font-bold text-red-600 mb-3">
-                ${product.price}
-            </p>
+            {/* Price */}
+            <p className="text-center text-xl font-bold text-red-600 mb-3">${product.price}</p>
 
-            <div className="flex items-center justify-center gap-1 mb-4">
+            {/* Rating */}
+            <div className="flex items-center justify-center gap-0.5 mb-4">
                 {[...Array(rateWithoutDecimal)].map((_, index) => (
-                    <Star key={index} size={20} className="text-amber-500 fill-amber-500" strokeWidth={0.5} />
+                    <Star index={`filled-${index}`} size={18} className="text-amber-500 fill-amber-500" strokeWidth={0.5} />
                 ))}
-                {decimalPart > 0 && (
-                    <StarHalf size={20} className="text-amber-500 fill-amber-500" strokeWidth={0.5} />
+                {decimalPart >= 0.5 && (
+                    <StarHalf size={18} className="text-amber-500 fill-amber-500" strokeWidth={0.5} />
                 )}
                 {[...Array(emptyStars)].map((_, index) => (
-                    <Star key={index + 5} size={20} className="text-gray-300 fill-gray-300" strokeWidth={0.5} />
+                    <Star index={`empty-${index}`} size={18} className="text-gray-300 fill-gray-300" strokeWidth={0.5} />
                 ))}
-                <span className="ml-2 text-sm text-gray-500">({product.rating?.rate?.toFixed(1)})</span>
-
+                <span className="ml-2 text-sm text-gray-500">({rate.toFixed(1)})</span>
             </div>
 
-            <Button className="w-full bg-gray-700 hover:bg-gray-600 text-white font-medium">
-                Add to Cart
-            </Button>
-            <Button className="w-full bg-blue-300 hover:bg-blue-600 text-white font-medium mt-2" onClick={() =>
-                router.push(`/product/${product.id}`)}
-            >
-                go to details
-            </Button>
-        </div >
-    )
+            {/* Actions */}
+            <div className="space-y-2">
+                <Button
+                    className="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold transition duration-150"
+                >
+                    Add to Cart
+                </Button>
+                <Button
+                    variant="outline"
+                    className="w-full text-blue-600 border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                    onClick={() => router.push(`/product/${product.id}`)}
+                >
+                    View Details
+                </Button>
+            </div>
+        </div>
+    );
 }

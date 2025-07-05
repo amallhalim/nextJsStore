@@ -7,7 +7,7 @@ export default async function ProductDetailsPage({ params }) {
 
     return (
         <div className=" h-[80%] px-4 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div className="grid md:grid-cols-2 gap-10 items-start">
 
                 {/* Product Image */}
                 <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-200">
@@ -19,7 +19,7 @@ export default async function ProductDetailsPage({ params }) {
                 </div>
 
                 {/* Product Info */}
-                <div className="bg-white p-6 rounded-xl shadow-md">
+                <div className="bg-white p-6 rounded-xl shadow-md min-h-[100%]">
                     <h1 className="text-3xl font-semibold text-gray-900 mb-2">{product.title}</h1>
 
                     <div className="inline-block bg-amber-100 text-amber-700 text-sm px-3 py-1 rounded-full mb-4">

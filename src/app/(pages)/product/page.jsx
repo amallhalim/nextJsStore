@@ -13,11 +13,12 @@ export default async function page() {
             {product?.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                 >
-                    {product.map(product => (
+                    {product.map((product, index) => (
                         <div key={product.id} className="mb-4">
-                            <ProductCard product={product} key={product.id} />
+                            <ProductCard product={product} index={index} />
                         </div>
                     ))}
+
                 </div>
             ) : (
                 <p>No posts available</p>
