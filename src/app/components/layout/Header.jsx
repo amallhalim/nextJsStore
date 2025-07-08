@@ -8,10 +8,9 @@ export default function Header() {
     console.log("🚀 ~ Header ~ itemsCount:", itemsCount)
 
     return (
-        <header className="bg-blue-500 text-white py-4 shadow-md mb-3">
+        <header className="bg-blue-500 text-white  shadow-md mb-3 py-3 px-5">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <h1 className="text-2xl font-bold tracking-wide">MyStore</h1>
-
                 <p className="text-lg font-medium hidden sm:block">Welcome to our shop</p>
 
                 <button className="relative group">
