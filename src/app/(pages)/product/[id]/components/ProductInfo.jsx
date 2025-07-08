@@ -1,13 +1,20 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import { useCartStore } from '@/app/stores/cartStore';
 export default function ProductInfo({ product }) {
     const addToCart = useCartStore(state => state.addToCart)
+    const itemsInCart = useCartStore(state => state.itemsInCart)
+    const productCount = itemsInCart.find(item => item.id === product.id)?.quantity
+    const [isLoading, setIsLoading] = useState(false)
 
-    const addToCartFunc = () => {
+    const addToCartFunc = async () => {
+        setIsLoading(true)
 
-        addToCart(product);
+        // simulate delay or await API call
+
+        addToCart(product)
+        setIsLoading(false)
     }
     return (
         <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -42,14 +49,26 @@ export default function ProductInfo({ product }) {
                     </span>
                 </div>
 
-                <button className="w-full flex items-center
-                     justify-center gap-2 bg-gray-800 hover:bg-gray-700
-                      text-white font-medium py-2.5 px-4 rounded-lg shadow-sm transition     "
-                    onClick={addToCartFunc}
-                >
-                    <ShoppingCart size={18} />
-                    Add to Cart
-                </button>
+
+                <div className="relative w-full">
+                    <button
+                        onClick={addToCartFunc}
+                        className="w-full flex items-center justify-center gap-2
+                   bg-gray-800 hover:bg-gray-700 active:scale-102
+                   text-white font-medium py-2.5 px-4 rounded-lg shadow "
+                    >
+                        {productCount > 0 && !isLoading && (
+                            <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded-full font-semibold shadow-sm">
+                                {productCount}
+                            </span>
+                        )}
+                        {isLoading ? (
+                            <Loader2 className="animate-spin" size={18} />
+                        ) : (
+                            <ShoppingCart size={18} />
+                        )}                        {isLoading ? 'Adding...' : 'Add to Cart'}
+                    </button>
+                </div>
             </div>
         </div>
     )
