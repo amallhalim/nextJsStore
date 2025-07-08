@@ -6,16 +6,16 @@ import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import { useRouter } from 'next/navigation';
 import { useCartStore } from "./../../../stores/cartStore"
 export default function ProductCard({ product, index }) {
-    console.log("🚀 ~ ProductCard ~ index:", index)
     const router = useRouter();
     const addToCart = useCartStore(state => state.addToCart)
+
     const rate = product.rating?.rate || 0;
     const rateWithoutDecimal = Math.floor(rate);
     const decimalPart = rate % 1;
     const emptyStars = 5 - Math.ceil(rate);
+
     const addToCartFunc = () => {
         addToCart(product);
-
     }
     return (
         <div className="relative w-full h-full p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
@@ -65,14 +65,18 @@ export default function ProductCard({ product, index }) {
             {/* Actions */}
             <div className="space-y-2">
                 <Button
-                    className=" mb-6 w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold transition duration-150"
+                    className=" mb-6 w-full
+                    border border-gray-800
+                     bg-gray-800 hover:bg-white
+                      text-white hover:text-gray-800 font-semibold transition duration-150"
                     onClick={addToCartFunc}
                 >
                     Add to Cart
                 </Button>
                 <Button
                     variant="outline"
-                    className="w-full text-blue-600 border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                    className="w-full text-blue-600 border-blue-300
+                     hover:bg-blue-700 hover:text-blue-100"
                     onClick={() => router.push(`/product/${product.id}`)}
                 >
                     View Details
