@@ -11,8 +11,6 @@ export default function ProductInfo({ product }) {
     const addToCartFunc = async () => {
         setIsLoading(true)
 
-        // simulate delay or await API call
-
         addToCart(product)
         setIsLoading(false)
     }

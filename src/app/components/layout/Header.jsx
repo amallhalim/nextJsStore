@@ -2,17 +2,22 @@
 import { ShoppingCart } from 'lucide-react'
 import React from 'react'
 import { useCartStore } from "./../../stores/cartStore"
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
     const itemsCount = useCartStore((state) => state.itemsCount);
     console.log("🚀 ~ Header ~ itemsCount:", itemsCount)
-
+    const router = useRouter()
     return (
         <header className="bg-blue-500 text-white  shadow-md mb-3 py-3 px-5">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <h1 className="text-2xl font-bold tracking-wide">MyStore</h1>
+                <div className=' cursor-pointer' onClick={() => { router.push('/') }} >
+                    <h1 className="text-2xl font-bold tracking-wide " >MyStore</h1>
+                </div>
+                <div className=' cursor-pointer' onClick={() => { router.push('/product') }} >
+                    <h1 className="text-chart-1 font-bold tracking-wide " >all product</h1>
+                </div>
                 <p className="text-lg font-medium hidden sm:block">Welcome to our shop</p>
-
                 <button className="relative group">
                     <ShoppingCart strokeWidth={1.5} absoluteStrokeWidth className="w-6 h-6 group-hover:scale-110 transition-transform duration-150" />
                     <span className="absolute -top-2 -right-2 text-xs bg-yellow-300 text-black rounded-full px-1.5 py-0.5 font-semibold">
