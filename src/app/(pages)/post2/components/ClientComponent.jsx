@@ -11,70 +11,59 @@ export default function ClientComponent() {
   console.log("🚀 ~ ClientComponent ~ searchParams:", searchParams)
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        backgroundColor: "#f0f8ff",
-        minHeight: "100vh",
-      }}
-    >
-      <h2 style={{ marginBottom: "16px", color: "#007acc" }}>Client Component</h2>
-
-      {loading && <p>Loading...</p>}
+    <div className="space-y-6">
+      {loading && (
+        <div className="text-center py-8 text-gray-600">
+          Loading posts...
+        </div>
+      )}
+      
       {error && (
-        <p style={{ color: "red" }}>Error: {error.message || "Something went wrong"}</p>
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <p className="text-red-700">Error: {error.message || "Something went wrong"}</p>
+        </div>
       )}
 
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "20px",
-          justifyContent: "flex-start",
-        }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allPost?.length > 0 ? (
           allPost.map((post) => (
             <div
               key={post.id}
-              style={{
-                backgroundColor: "#00bcd4", // aqua shade
-                padding: "16px",
-                borderRadius: "12px",
-                width: "calc(33.333% - 20px)",
-                color: "white",
-                boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-                cursor: "pointer",
-                transition: "transform 0.2s ease",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              className="bg-blue-50 rounded-lg p-5 border border-blue-200 hover:shadow-md transition-shadow duration-200"
             >
-              <Link href={`/post2/${post.id}`}> go to details </Link>
-              <h3
-                style={{
-                  backgroundColor: "#388e3c",
-                  padding: "8px",
-                  borderRadius: "8px",
-                  marginBottom: "12px",
-                }}
-              >
-                {post.title}
-              </h3>
-              <p
-                style={{
-                  backgroundColor: "#8e24aa",
-                  borderRadius: "8px",
-                  padding: "8px",
-                  lineHeight: "1.4",
-                }}
-              >
-                {post.body}
-              </p>
+              <div className="space-y-3">
+                <div className="flex justify-between items-start">
+                  <Link 
+                    href={`/post2/${post.id}`}
+                    className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                  >
+                    View Details →
+                  </Link>
+                  <span className="text-xs text-gray-500">#{post.id}</span>
+                </div>
+
+                <div className="bg-green-100 rounded-md p-3 border border-green-200">
+                  <h3 className="font-semibold text-gray-800 text-sm line-clamp-2">
+                    {post.title}
+                  </h3>
+                </div>
+
+                <div className="bg-purple-100 rounded-md p-3 border border-purple-200">
+                  <p className="text-gray-700 text-sm line-clamp-3 leading-relaxed">
+                    {post.body}
+                  </p>
+                </div>
+
+                <div className="text-xs text-gray-500 text-center">
+                  {new Date().toLocaleDateString()}
+                </div>
+              </div>
             </div>
           ))
         ) : (
-          <p>No posts available</p>
+          <div className="col-span-full text-center py-8 text-gray-500">
+            No posts available
+          </div>
         )}
       </div>
     </div>
