@@ -10,7 +10,7 @@ export default function Header() {
     const router = useRouter()
     
     return (
-        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg">
+        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg mb-10">
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}

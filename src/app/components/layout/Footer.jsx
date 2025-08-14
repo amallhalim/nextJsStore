@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+    <footer className="bg-gradient-to-r from-gray-800 to-gray-900 text-white mt-10">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
