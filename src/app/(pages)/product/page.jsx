@@ -9,7 +9,7 @@ export default async function page() {
     // console.log("🚀 ~ page ~ product:", product)
 
     return (
-        <div>
+        <div className='mt-10 mb-10'>
             {product?.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                 >
