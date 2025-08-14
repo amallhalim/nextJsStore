@@ -32,11 +32,7 @@ export default function Header() {
                                 All Products
                             </span>
                         </div>
-                        <div className='cursor-pointer group'>
-                            <span className="text-lg font-medium text-white/90 group-hover:text-yellow-300 transition-colors duration-300">
-                                Categories
-                            </span>
-                        </div>
+                     
                         <div className='cursor-pointer group'>
                             <span className="text-lg font-medium text-white/90 group-hover:text-yellow-300 transition-colors duration-300">
                                 About
