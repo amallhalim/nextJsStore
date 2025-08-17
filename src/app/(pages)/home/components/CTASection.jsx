@@ -36,7 +36,7 @@ export default function CTASection() {
           </Link>
           
           <Link 
-            href="/post2"
+            href="/product"
             className="group inline-flex items-center justify-center px-10 py-5 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border-2 border-white/20 hover:border-white/40 shadow-xl hover:shadow-white/10"
           >
             Browse All Categories

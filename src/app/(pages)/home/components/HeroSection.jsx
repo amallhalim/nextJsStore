@@ -33,7 +33,7 @@ export default function HeroSection() {
                 <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
               </Link>
               <Link 
-                href="/post2" 
+                href="/product" 
                 className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/40"
               >
                 View All Products
