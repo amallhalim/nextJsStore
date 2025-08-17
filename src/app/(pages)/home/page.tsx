@@ -15,7 +15,7 @@ import FeaturesSection from './components/FeaturesSection'
 
 export default function HomeContent() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-blue-800 w-full">
       <HeroSection />
       <CategoriesSection />
       <FeaturedProducts />
