@@ -1,15 +1,27 @@
-import Image from "next/image";
- import image2 from "../../../assets/img/test.jpg"
-export default function page() {
+import Image from 'next/image'
+import HeroSection from './components/HeroSection'
+import CategoriesSection from './components/CategoriesSection'
+import FeaturedProducts from './components/FeaturedProducts'
+import TestimonialsSection from './components/TestimonialsSection'
+import CTASection from './components/CTASection'
+import FeaturesSection from './components/FeaturesSection'
+
+// export const metadata = {
+//   title: {
+//     default: "MyStore - Your Premium Shopping Destination",
+//   },
+//   description: 'Discover amazing products at MyStore. Shop the latest trends with fast delivery and excellent customer service.',
+// }
+
+export default function HomeContent() {
   return (
-    <div>home
-
-      <Image 
-      src={image2}
-       alt="Vercel Logo" 
-       width={2000} height={1000}/>
-
-      
+    <div className="min-h-screen bg-blue-800 w-full">
+      <HeroSection />
+      <CategoriesSection />
+      <FeaturedProducts />
+      <TestimonialsSection />
+      <CTASection />
+      <FeaturesSection />
     </div>
   )
 }
