@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { inter } from "./components/ui/fonts";
+import { lusitana } from "./components/ui/fonts";
+
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
@@ -35,7 +36,7 @@ export default function RootLayout({
         className={`
           ${geistSans.variable}
           ${geistMono.variable}
-          ${inter.className}
+          ${lusitana.className}
           antialiased
           min-h-screen
           bg-gray-50
