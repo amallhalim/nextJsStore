@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import { useCartStore } from '@/app/stores/cartStore';
+import Image from 'next/image';
 export default function ProductInfo({ product }) {
     const addToCart = useCartStore(state => state.addToCart)
     const itemsInCart = useCartStore(state => state.itemsInCart)
@@ -18,10 +19,12 @@ export default function ProductInfo({ product }) {
         <div className="grid md:grid-cols-2 gap-10 items-start">
 
             <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-200">
-                <img
+                <Image
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-[400px] object-contain rounded-md"
+                    width={500}
+                    height={500}
+                    className="w-full h-[400px] object-contain rounded-md "
                 />
             </div>
 

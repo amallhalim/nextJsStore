@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description: "Discover amazing products at MyStore. Shop the latest trends with fast delivery and excellent customer service.",
 };
-
+const isAdmin = true
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,7 +43,7 @@ export default function RootLayout({
           text-black
         `}
       >
-        <Header />
+        {isAdmin ? <div>Admin Panel</div> : <Header />}
         <main className="min-h-screen">
           {children}
         </main>
